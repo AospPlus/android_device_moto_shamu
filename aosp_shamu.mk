@@ -23,6 +23,9 @@ PRODUCT_COPY_FILES := device/sample/etc/apns-full-conf.xml:system/etc/apns-conf.
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
+# Inherit AX config
+$(call inherit-product, vendor/ax/config/common.mk)
+
 PRODUCT_NAME := aosp_shamu
 PRODUCT_DEVICE := shamu
 PRODUCT_BRAND := Android
@@ -31,7 +34,7 @@ PRODUCT_MANUFACTURER := motorola
 PRODUCT_RESTRICT_VENDOR_FILES := true
 
 $(call inherit-product, device/moto/shamu/device.mk)
-$(call inherit-product-if-exists, vendor/moto/shamu/device-vendor.mk)
+$(call inherit-product, vendor/moto/shamu/device-vendor.mk)
 
 PRODUCT_NAME := aosp_shamu
 
